@@ -4,7 +4,7 @@ This template repository is the starter project for Internship Portfolio. Writte
 
 ### Question(s)
 
-### Portfolio Project Description for Internship Course (Worth 10% of Final Grade)
+### Portfolio Project Description for Internship Course
 
 #### Project Overview:
 For this project, students will create a professional portfolio website showcasing their work, skills, and experiences. The portfolio will consist of various essential pages, and students will be required to demonstrate their knowledge of web technologies by integrating an API call to fetch data, process it, and expose it through their own API server for others to consume.
