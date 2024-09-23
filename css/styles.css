@@ -10976,3 +10976,13 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
 }
+/* Make the image 3 times the size of the section */
+.oversized-image {
+  width: 200%;           /* Let the image adjust to the container width */
+  height: auto;          /* Auto height to maintain aspect ratio */
+  object-fit: cover;     /* Prevent the image from distorting */
+  max-width: 400px;      /* Optional: Set a max width to avoid it becoming too large */
+  max-height: 400px;     /* Optional: Set a max height */
+  position: absolute;
+    bottom: 10px; /* Adjust this value to position the image */
+}
