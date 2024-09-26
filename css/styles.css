@@ -10986,3 +10986,20 @@ section.resume-section .resume-section-content {
   position: absolute;
     bottom: 10px; /* Adjust this value to position the image */
 }
+
+.award-image {
+  max-width: 400px;      /* Ancho máximo de la imagen */
+  max-height: 400px;     /* Altura máxima de la imagen */
+  position: rigth;     /* Asegúrate de que esté en el flujo del documento */
+  z-index: 1;            /* Asegura que esté sobre la imagen de fondo si es necesario */
+}
+
+
+
+
+
+
+
+
+
+
