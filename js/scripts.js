@@ -36,7 +36,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
 function apiIntegration() {
     //Request the current time based on your public IP (as JSON):
-    fetch('http://worldtimeapi.org/api/ip')
+    fetch('https://worldtimeapi.org/api/ip')
         .then(response => response.json())
         .then(data => {
             console.log(data);
@@ -57,7 +57,7 @@ function apiIntegration() {
             //for loop each element in the array
             data.portfolio.forEach(element => {
                 const newElement = document.createElement('div');
-                console.log(element);
+                // console.log(element);
                 newElement.textContent = element.description;
                 myApiElement.appendChild(newElement);
                 const link = document.createElement('a');
