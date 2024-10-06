@@ -880,7 +880,7 @@ progress {
 
 .g-4,
 .gx-4 {
-  --bs-gutter-x: 1.5rem;
+  /* --bs-gutter-x: 2rem; */
 }
 
 .g-4,
@@ -7307,7 +7307,7 @@ textarea.form-control-lg {
 }
 
 .h-100 {
-  height: 100% !important;
+  height: 80% !important;
 }
 
 .h-auto {
@@ -10981,59 +10981,69 @@ section.resume-section .resume-section-content {
 }
 /* Make the image 3 times the size of the section */
 .oversized-image {
-  width: 200%;           /* Let the image adjust to the container width */
-  height: auto;          /* Auto height to maintain aspect ratio */
-  object-fit: cover;     /* Prevent the image from distorting */
-  max-width: 400px;      /* Optional: Set a max width to avoid it becoming too large */
-  max-height: 400px;     /* Optional: Set a max height */
+  width: 200%;           
+  height: auto;         
+  object-fit: cover;     
+  max-width: 400px;   
+  max-height: 400px;   
   position: absolute;
-    bottom: 10px; /* Adjust this value to position the image */
+    bottom: 10px; 
 }
 
 .award-image {
-  max-width: 400px;      /* Ancho máximo de la imagen */
-  max-height: 400px;     /* Altura máxima de la imagen */
-  position: rigth;     /* Asegúrate de que esté en el flujo del documento */
-  z-index: 1;            /* Asegura que esté sobre la imagen de fondo si es necesario */
+  max-width: 400px;      
+  max-height: 400px;     
+  position: rigth;     
+  z-index: 1;            
 }
 
+#skills.skills-section{
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  max-width: 88rem;
+}
+
+
 #skills.skills-section .card {
-  background-color: #000 !important; /* Keep the existing background color */
+  background-color: #000 !important; 
   transition: transform 0.3s ease !important;
-  border: none !important;
   box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
   margin: 25px 25px !important; 
 }
 
 #skills.skills-section .card:hover {
-  transform: translateY(-5px) !important; /* Keep existing hover effect */
+  transform: translateY(-5px) !important; 
 }
 
 #skills.skills-section .skills-container {
   display: flex;
   align-items: center;
-  padding-left: 3rem; /* Keep the left padding as specified */
-  padding-right: 20rem; /* Keep the right padding as specified */
-  padding-top: 5rem; /* Adjusted padding */
-  padding-bottom: 5rem; /* Adjusted padding */
-  max-width: 88rem; /* Keep the same max-width */
-  flex-wrap: wrap; /* Allow wrapping of items */
+  padding-left: 8rem; 
+  padding-right: 20rem; 
+  padding-top: 1rem; 
+  padding-bottom: 5rem; 
+  max-width: 88rem; 
+  flex-wrap: wrap; 
 }
 
 #skills.skills-section .skill-item {
   display: flex !important;
   align-items: center !important;
   gap: 1.5rem !important;
-  background-color: #000 !important; /* Keep existing background color */
+  background-color: #000 !important; 
   padding: .2rem .3rem !important;
   border-radius: 20px !important;
   transition: all 0.3s ease !important;
-  margin: 5px; /* Add margins around skill items */
+  margin: 5px; 
 }
 
 #skills.skills-section .skill-item:hover {
-  background-color: #146c43 !important; /* Keep existing hover effect */
-  transform: scale(1.08) !important; /* Keep existing hover effect */
+  background-color: #146c43 !important; 
+  transform: scale(1.08) !important; 
 }
 
 #skills.skills-section .skill-item i {
@@ -11041,7 +11051,7 @@ section.resume-section .resume-section-content {
 }
 
 #skills.skills-section .card-body {
-  padding: .5rem !important;
+  padding: 1.5rem !important;
 }
 
 #skills.skills-section .card-title {
@@ -11049,54 +11059,72 @@ section.resume-section .resume-section-content {
   font-size: 1.25rem !important;
 }
 
-@media (max-width: 768px) {
-  #skills.skills-section .col-md-6 {
-      margin-bottom: 1rem !important; /* Maintain responsive design */
-  }
-}
+
 
 #interests .resume-section-content {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Space between the top and bottom rows */
+  gap: 20px; 
 }
 
 #interests .interests-row {
   display: flex;
   justify-content: space-between;
-  gap: 20px; /* Space between the blocks and the image */
+  gap: 20px; 
 }
 
 #interests .interest-block {
-  flex: 1 1 45%; /* Each block takes 45% of the row width */
-  background-color: transparent; /* Transparent background */
+  flex: 1 1 50%; 
+  background-color: transparent; 
   padding: 20px;
   box-sizing: border-box;
-  border: 1px solid #ddd; /* Optional: Add a subtle border for structure */
-  border-radius: 8px; /* Rounded corners */
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+#interests .interest-block:hover {
+  background-color: rgba(0, 0, 0, 0.1); 
+  transform: scale(1.05); 
+}
+
+#interests .interests-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; 
+}
+
+#interests .interest-block {
+  flex: 1 1 50%; 
+  background-color: transparent; 
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+  transition: background-color 0.3s ease; 
+}
+
+#interests .interest-block:hover {
+  background-color: rgba(0, 0, 0, 0.1); 
+}
+
+#interests .image-block {
+  flex: 1 1 100%; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
 }
 
 #interests .image-block img {
-  max-width: 100%;
-  height: auto;
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Smooth transition */
+  width: 70%; 
+  max-width: 100%; 
+  height: auto; 
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease; 
 }
 
 #interests .image-block:hover img {
-  opacity: 1; /* Show the image */
-  visibility: visible; /* Make sure the image is visible */
+  opacity: 1; 
+  visibility: visible; 
   transform: rotateY(180deg); 
 }
-
-@media (max-width: 768px) {
-  #interests .interests-row {
-      flex-direction: column; 
-  }
-
-  #interests .interest-block,
-  #interests .image-block {
-      flex: 1 1 100%; 
-  }
-}
-
 

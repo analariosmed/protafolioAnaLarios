@@ -32,3 +32,44 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+
+function apiIntegration() {
+    //Request the current time based on your public IP (as JSON):
+    fetch('http://worldtimeapi.org/api/ip')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            document.getElementById("time-api-integration").innerHTML = data.datetime;
+        })
+        .catch(error => {
+            console.error('There was an error!', error);
+        });
+    document.getElementById("time-api-integration").innerHTML = "test";
+
+    // call my own api
+    fetch('https://portfolio-backend-q9s6.vercel.app/api')
+        .then(response => response.json())
+        .then(data => {
+            //append the data to the html
+            const myApiElement = document.createElement('div');
+            myApiElement.textContent = data.portfolio;
+            //for loop each element in the array
+            data.portfolio.forEach(element => {
+                const newElement = document.createElement('div');
+                console.log(element);
+                newElement.textContent = element.description;
+                myApiElement.appendChild(newElement);
+                const link = document.createElement('a');
+                link.href = element.url;
+                link.textContent = element.url;
+                myApiElement.appendChild(link);
+            });
+            document.getElementById("my-api-integration").appendChild(myApiElement);
+        })
+        .catch(error => {
+            console.error('There was an error!', error);
+        });
+}
+
+apiIntegration();
