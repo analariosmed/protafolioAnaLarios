@@ -44,10 +44,8 @@ window.addEventListener('DOMContentLoaded', event => {
             loadingSpinner.classList.add('d-none');
         }
     }
-
     const backend = 'https://portfolio-backend-q9s6.vercel.app/';
    // const backend = 'http://localhost:5000/';
-
 
     function createProjectCard(project, index) {
         const card = document.createElement('div');
