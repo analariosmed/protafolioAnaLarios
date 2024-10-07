@@ -45,12 +45,16 @@ window.addEventListener('DOMContentLoaded', event => {
         }
     }
 
+    const backend = 'https://portfolio-backend-q9s6.vercel.app/';
+   // const backend = 'http://localhost:5000/';
+
+
     function createProjectCard(project, index) {
         const card = document.createElement('div');
         card.className = 'col-md-4';
         card.innerHTML = `
                 <div class="card">
-                    <img src="http://localhost:5000/${project.image}" alt="${project.name}" class="card-img-top">
+                    <img src=${backend}${project.image}" alt="${project.name}" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">${project.name}</h5>
                         <p class="card-text">${project.description}</p>
@@ -65,7 +69,7 @@ window.addEventListener('DOMContentLoaded', event => {
     function loadPortfolioProjects() {
         if (!projectsContainer) return;
 
-        fetch('http://localhost:5000/api')
+        fetch(backend+'api')
             .then(response => {
 
                 if (!response.ok) {
