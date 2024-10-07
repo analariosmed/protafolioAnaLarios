@@ -8,7 +8,6 @@
 // 
 
 window.addEventListener('DOMContentLoaded', event => {
-
     // Activate Bootstrap scrollspy on the main nav element
     const sideNav = document.body.querySelector('#sideNav');
     if (sideNav) {
@@ -31,45 +30,88 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // Portfolio functionality
+    const projectsContainer = document.getElementById('projects-container');
+    const loadingSpinner = document.getElementById('loading-spinner');
+    const errorMessage = document.getElementById('error-message');
+
+    function showError(message) {
+        if (errorMessage) {
+            errorMessage.textContent = message;
+            errorMessage.classList.remove('d-none');
+        }
+        if (loadingSpinner) {
+            loadingSpinner.classList.add('d-none');
+        }
+    }
+
+    function createProjectCard(project, index) {
+        const card = document.createElement('div');
+        card.className = 'col-md-4';
+        card.innerHTML = `
+                <div class="card">
+                    <img src="http://localhost:5000/${project.image}" alt="${project.name}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">${project.name}</h5>
+                        <p class="card-text">${project.description}</p>
+                        <a href="${project.url}" class="btn btn-github">View on GitHub</a>
+                    </div>
+                </div>           
+        `;
+        return card;
+    }
+
+    // Load portfolio projects
+    function loadPortfolioProjects() {
+        if (!projectsContainer) return;
+
+        fetch('http://localhost:5000/api')
+            .then(response => {
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                return response.json();
+            })
+            .then(data => {
+
+                if (loadingSpinner) {
+                    loadingSpinner.classList.add('d-none');
+                }
+                
+                data.portfolio.forEach((project, index) => {
+
+                    const projectCard = createProjectCard(project, index);
+                    projectsContainer.appendChild(projectCard);
+                });
+            })
+            .catch(error => {
+                showError('Error loading projects. Please try again later.');
+                console.error('Error:', error);
+            });
+    }
+
+    // World Time API integration
+    function loadWorldTime() {
+        const timeElement = document.getElementById("time-api-integration");
+        if (!timeElement) return;
+
+        fetch('https://worldtimeapi.org/api/ip')
+            .then(response => response.json())
+            .then(data => {
+                timeElement.innerHTML = data.datetime;
+            })
+            .catch(error => {
+                console.error('There was an error loading time!', error);
+                timeElement.innerHTML = "Unable to load time";
+            });
+    }
+
+    // Initialize both portfolio and time API
+    loadPortfolioProjects();
+    loadWorldTime();
 });
 
 
-function apiIntegration() {
-    //Request the current time based on your public IP (as JSON):
-    fetch('https://worldtimeapi.org/api/ip')
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            document.getElementById("time-api-integration").innerHTML = data.datetime;
-        })
-        .catch(error => {
-            console.error('There was an error!', error);
-        });
-    document.getElementById("time-api-integration").innerHTML = "test";
 
-    // call my own api
-    fetch('https://portfolio-backend-q9s6.vercel.app/api')
-        .then(response => response.json())
-        .then(data => {
-            //append the data to the html
-            const myApiElement = document.createElement('div');
-            myApiElement.textContent = data.portfolio;
-            //for loop each element in the array
-            data.portfolio.forEach(element => {
-                const newElement = document.createElement('div');
-                // console.log(element);
-                newElement.textContent = element.description;
-                myApiElement.appendChild(newElement);
-                const link = document.createElement('a');
-                link.href = element.url;
-                link.textContent = element.url;
-                myApiElement.appendChild(link);
-            });
-            document.getElementById("my-api-integration").appendChild(myApiElement);
-        })
-        .catch(error => {
-            console.error('There was an error!', error);
-        });
-}
-
-apiIntegration();
