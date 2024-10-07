@@ -52,7 +52,7 @@ window.addEventListener('DOMContentLoaded', event => {
         card.className = 'col-md-4';
         card.innerHTML = `
                 <div class="card">
-                    <img src=${backend}${project.image}" alt="${project.name}" class="card-img-top">
+                    <img src="${backend}${project.image}" alt="${project.name}" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">${project.name}</h5>
                         <p class="card-text">${project.description}</p>
