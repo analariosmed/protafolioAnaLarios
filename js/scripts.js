@@ -102,7 +102,13 @@ window.addEventListener('DOMContentLoaded', event => {
         fetch('https://worldtimeapi.org/api/ip')
             .then(response => response.json())
             .then(data => {
-                timeElement.innerHTML = data.datetime;
+                const loadedTimeElement = document.createElement('div');
+                loadedTimeElement.className = 'mt-3';
+                loadedTimeElement.style.color = '#000';
+                // style bold
+                loadedTimeElement.style.fontWeight = 'bold';
+                loadedTimeElement.innerHTML = `This page was loaded at: ${new Date().toLocaleString()}`;
+                timeElement.appendChild(loadedTimeElement);
             })
             .catch(error => {
                 console.error('There was an error loading time!', error);
