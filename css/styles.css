@@ -10997,7 +10997,212 @@ section.resume-section .resume-section-content {
   z-index: 1;            
 }
 
-#skills.skills-section{
+/* Skills Section */
+#skills.skills-section {
+  /* display: flex !important; */
+  align-items: center !important;
+  padding-left: 2rem !important;
+  padding-right: 1rem !important;
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+  max-width: 88rem !important;
+}
+
+#skills.skills-section .card {
+  background-color: #000 !important;
+  transition: transform 0.3s ease !important;
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+  margin: 25px 25px !important;
+}
+
+#skills.skills-section .card:hover {
+  transform: translateY(-5px) !important;
+}
+
+#skills.skills-section .skills-container {
+  display: flex !important;
+  align-items: center !important;
+  /* padding-left: 8rem !important; */
+  /* padding-right: 20rem !important;
+  padding-top: 1rem !important;
+  padding-bottom: 5rem !important;
+  max-width: 88rem !important; */
+  flex-wrap: wrap !important;
+}
+
+#skills.skills-section .skill-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.5rem !important;
+  background-color: #000 !important;
+  padding: .2rem .3rem !important;
+  border-radius: 20px !important;
+  transition: all 0.3s ease !important;
+  margin: 5px !important;
+}
+
+#skills.skills-section .skill-item:hover {
+  background-color: #146c43 !important;
+  transform: scale(1.08) !important;
+}
+
+#skills.skills-section .skill-item i {
+  font-size: 2.2rem !important;
+}
+
+#skills.skills-section .card-body {
+  padding: 1.5rem !important;
+}
+
+#skills.skills-section .card-title {
+  margin-bottom: 10px !important;
+  font-size: 1.25rem !important;
+}
+
+/* Interests Section */
+#interests .resume-section-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+}
+
+#interests .interests-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+}
+
+#interests .interest-block {
+  flex: 1 1 50% !important;
+  background-color: transparent !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
+  border: 1px solid #ddd !important;
+  border-radius: 8px !important;
+  transition: background-color 0.3s ease, transform 0.3s ease !important;
+}
+
+#interests .interest-block:hover {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  transform: scale(1.05) !important;
+}
+
+#interests .image-block {
+  flex: 1 1 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+#interests .image-block img {
+  width: 70% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease !important;
+}
+
+#interests .image-block:hover img {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: rotateY(180deg) !important;
+}
+
+/* Portfolio Section */
+#portfolio .card {
+  background-color: transparent !important;
+  border: 2px solid #ffa500 !important;
+  border-radius: 8px !important;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out !important;
+  width: 100% !important;
+  max-width: 300px !important;
+  margin: 0 auto !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+#portfolio .card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+#portfolio .card img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 200px !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 auto !important;
+  border: 2px solid transparent !important;
+}
+
+#portfolio .card img:hover {
+  border-color: #ffa500 !important;
+}
+
+#portfolio .card-body {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+#portfolio .btn-github {
+  background-color: #24292e !important;
+  color: white !important;
+}
+
+#portfolio .btn-github:hover {
+  background-color: #0c4128 !important;
+  color: white !important;
+}
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+  /* Skills Section */
+  #skills .row {
+    flex-direction: column !important;
+  }
+
+  #skills .col-md-6 {
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  #skills .skills-container {
+    flex-direction: column !important;
+  }
+
+  /* Interests Section */
+  #interests .interests-row {
+    flex-direction: column !important;
+  }
+
+  #interests .interest-block {
+    width: 100% !important;
+  }
+
+  /* Image in Interests Section */
+  #interests .image-block {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  #interests .image-block img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Portfolio Section */
+  #portfolio .card {
+    max-width: 100% !important;
+  }
+
+  #portfolio .card img {
+    max-height: 150px !important;
+  }
+}
+
+
+/* #skills.skills-section{
   display: flex;
   align-items: center;
   padding-left: 2rem;
@@ -11173,5 +11378,5 @@ section.resume-section .resume-section-content {
 #portfolio .btn-github:hover {
   background-color: #0c4128; 
   color: white;
-}
+} */
 
