@@ -11031,7 +11031,6 @@ section.resume-section .resume-section-content {
 }
 
 #skills.skills-section .skill-item {
-  display: flex !important;
   align-items: center !important;
   gap: 1.5rem !important;
   background-color: #000 !important;
